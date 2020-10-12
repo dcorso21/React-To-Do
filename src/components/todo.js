@@ -14,9 +14,15 @@ function Todo({ todo, todos, setTodos }) {
             return el;
         }));
     }
+    function setTodoText(e) {
+        console.log(e.target.innerHTML);
+        e.target.innerHTML = (
+            `<input type="text"/>`
+        )
+    }
     return (
         <div className="todo">
-            <li className={`todo-item ${todo.completed? "completed": ""}`}>{todo.text}</li>
+            <li onClick={setTodoText} className={`todo-item ${todo.completed? "completed": ""}`}>Add a task here</li>
             <button onClick={completeHandler} className="complete-btn">
                 <i className="fas fa-check"></i>
             </button>
